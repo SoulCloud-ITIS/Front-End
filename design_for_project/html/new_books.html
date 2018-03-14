@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
     <link rel="stylesheet" href="../css/stylesheet.css">
-    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script src="/js/stars.js"></script>
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
@@ -46,7 +47,6 @@
     .btn-secondary:active, .btn-secondary:hover, .btn-secondary:visited{
         color: whitesmoke !important;
         background-color: #060606 !important;
-        font-size: 20px !important;
         border-color: #060606 !important;
     }
     * {
@@ -58,64 +58,68 @@
     .btn, .btn:visited, .btn:active{
         color: whitesmoke !important;
     }
+
+    .nav{
+
+        list-style:none;
+        margin:0;
+        padding:0;
+        text-align:center;
+    }
+    .nav li{
+        display:inline;
+    }
+    .nav a{
+        display:inline-block;
+        padding:10px;
+    }
+    .navbar-brand {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: 0;
+        text-align: center;
+        margin: auto;
+    }
+    .navbar-toggle {
+        z-index:3;
+    }
+    .navbar-default>.nav>li>a, .navbar-default>.nav>li>a:hover, .navbar-default>.nav>li>a:visited, .navbar-default>.nav>li>a:active {
+        color: whitesmoke;
+        background-color: #060606 !important;
+    }
 </style>
 <body>
 <!-- Navbar -->
-    <div class="w3-top">
-        <div class="w3-bar w3-left-align" style="padding: 4px; background-color:whitesmoke">
-            <h4 style=" margin-left: 650px; font-size: 30px" class="w3-bar-item">S o u l   C l o u d</h4>
-            <!-- <a style="font-size: 18px; margin-left: 3%" href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Пункт1</a>
-            <a style="font-size: 18px; margin-left: 2%" href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Пункт2</a> -->
-            <!--
-            <div class="w3-dropdown-hover w3-hide-small">
-                <button class="w3-button" title="Notifications">Dropdown <i class="fa fa-caret-down"></i></button>
-                <div class="w3-dropdown-content w3-card-4 w3-bar-block">
-                    <a href="#" class="w3-bar-item w3-button">Link</a>
-                    <a href="#" class="w3-bar-item w3-button">Link</a>
-                    <a href="#" class="w3-bar-item w3-button">Link</a>
-                </div>
-            </div> -->
-            <!-- <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-teal" title="Login"><i class="fa fa-search"></i></a>-->
-            <ul class="nav float-right nav-pills" style="margin-right: 30px; margin-top: 14px">
-                <form action="main.html">
-                    <button type="submit" class="w3-button log" style="font-size: 18px">Выход</button>
-                </form>
-            </ul>
-        </div>
 
-        <nav class="navbar" style="height: 50px; width: 100%; background-color: #060606; border-radius: 0px">
-            <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-                <form action="my_books.html">
-                    <div class="btn-group mr-2" role="group" aria-label="First group">
-                        <button type="submit" class="btn btn-secondary" style="margin-right: 50px; font-size: 17px">мои книги</button>
-                    </div>
-                </form>
-
-                <form action="recomend_books.html">
-                    <div class="btn-group mr-2" role="group" aria-label="Second group">
-                        <button type="submit" class="btn btn-secondary" style="margin-right: 50px; font-size: 17px">рекомендации</button>
-                    </div>
-                </form>
-
-                <form action="new_books.html">
-                    <div class="btn-group" role="group" aria-label="Third group">
-                        <button type="submit" class="btn btn-secondary" style="margin-right: 50px; font-size: 17px">новые книги</button>
-                    </div>
-                </form>
+<div class="w3-top">
+    <div class="w3-bar" style="background-color:whitesmoke">
+        <nav class="navbar navbar-default" role="navigation" style="border-radius: 0px; margin: 0px; padding: 7px">
+            <a class="navbar-brand" style="font-size: 30px; padding: 20px; color: black" href="#">S o u l  c l o u d</a>
+            <div class="collapse navbar-collapse" id="navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a style="font-size: 18px" href="#">Выход</a></li>
+                </ul>
             </div>
         </nav>
     </div>
-
-   <!-- <div class="container" style="margin-top: 120px; background-color: whitesmoke;">
-            <h2>Новые книги</h2>
-            <div class="card">
-                <div class="card-block">
-                    <img src="/img/img1.jpg">
+    <nav class="navbar navbar-default" role="navigation" style="background-color: #060606; border-radius: 0px; margin: 0px; border: none">
+        <ul class="nav" style="color: whitesmoke; margin-left: 370px; font-size: 17px">
+            <li style="margin-right: 50px"><a href="my_books.html">мои книги</a></li>
+            <li style="margin-right: 50px"><a href="recomend_books.html">рекомендации</a></li>
+            <li><a href="new_books.html">новые книги</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                <div class="search" style="padding: 0px">
+                    <input type="text" class="form-control input-sm" maxlength="100" style="font-size: 14px" placeholder="по названию..." />
+                    <button style=" height: 30px; font-size: 17px; background-color: #060606; position: absolute; right: 0; padding: 0px;
+                     border-radius:1px;" type="submit" class="btn btn-sm">поиск</button>
                 </div>
-            </div>
-       </div>
-   </div> -->
-
+            </li>
+        </ul>
+    </nav>
+</div>
     <div class="container" style="margin-top: 150px; background-color: whitesmoke">
         <div class="row">
             <div class="col-md-13">
