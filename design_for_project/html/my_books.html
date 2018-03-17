@@ -13,42 +13,10 @@
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
 <style>
-    .nav-link:active, .nav-link:visited, .nav-link:hover{
-        color: white !important;
-    }
-    .log:active, .log:visited, .log:hover{
-        background-color: whitesmoke !important;
-        color: gray !important;
-        border-bottom-color: whitesmoke !important;
-    }
-    .w3-input{
-        color: #000;
-    }
-    .w3-bar-item:active, .w3-bar-item:hover{
-        text-decoration: none !important;
-        background-color: whitesmoke!important;
-        color: black !important;
-    }
-    .w3-bar-item:visited {
-        text-decoration: none !important;
-        color: white !important;
-    }
-    .btn-secondary {
-        background-color: #060606 !important;
-        font-size: 18px;
-        border-color: #060606 !important;
-    }
-
-    .btn-secondary:active, .btn-secondary:hover, .btn-secondary:visited{
-        color: whitesmoke !important;
-        background-color: #060606 !important;
-        border-color: #060606 !important;
-    }
     * {
         outline: none !important;
     }
@@ -59,13 +27,6 @@
         color: whitesmoke !important;
     }
 
-    .nav{
-
-        list-style:none;
-        margin:0;
-        padding:0;
-        text-align:center;
-    }
     .nav li{
         display:inline;
     }
@@ -73,34 +34,35 @@
         display:inline-block;
         padding:10px;
     }
-    .navbar-brand {
-        position: absolute;
-        width: 100%;
-        left: 0;
-        top: 0;
-        text-align: center;
-        margin: auto;
-    }
-    .navbar-toggle {
-        z-index:3;
-    }
+
     .navbar-default>.nav>li>a, .navbar-default>.nav>li>a:hover, .navbar-default>.nav>li>a:visited, .navbar-default>.nav>li>a:active {
         color: whitesmoke;
         background-color: #060606 !important;
     }
+
+    .navbar{
+        margin-bottom: 0px !important;
+    }
 </style>
 <body>
 <div class="w3-top">
-    <div class="w3-bar" style="background-color:whitesmoke">
-        <nav class="navbar navbar-default" role="navigation" style="border-radius: 0px; margin: 0px; padding: 7px">
-            <a class="navbar-brand" style="font-size: 30px; padding: 20px; color: black" href="#">S o u l  c l o u d</a>
-            <div class="collapse navbar-collapse" id="navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a style="font-size: 18px" href="main.html">Выход</a></li>
-                </ul>
-            </div>
-        </nav>
-    </div>
+    <nav class="navbar navbar-expand-md navbar-dark" style="padding: 8px; background-color:whitesmoke">
+        <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+            <ul class="navbar-nav mr-auto">
+            </ul>
+        </div>
+        <div class="mx-auto order-0">
+            <a style="font-size: 30px; padding: 2px; color: black" class="navbar-brand mx-auto">S o u l C l o u d</a>
+        </div>
+
+        <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a href="main.html" class="nav-link" style="font-size: 18px; color: #060606; margin-right: 20px">Выход</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
     <nav class="navbar navbar-default" role="navigation" style="background-color: #060606; border-radius: 0px; margin: 0px; border: none">
         <ul class="nav" style="color: whitesmoke; margin-left: 370px; font-size: 17px">
             <li style="margin-right: 50px"><a href="my_books.html">мои книги</a></li>
