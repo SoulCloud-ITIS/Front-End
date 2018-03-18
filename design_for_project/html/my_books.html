@@ -8,9 +8,10 @@
     <link rel="stylesheet" href="../css/stylesheet.css">
     <link rel="stylesheet" href="../css/external_css_libraries/w3.css">
 
+  <!--  <link rel="stylesheet" href="../css/external_css_libraries/bootstrap3_3_0.min.css">
+    <link rel="stylesheet" href="../css/external_css_libraries/bootstrap4_0_0.min.css">
+-->
 
-    <script src="../js/external_js_libraries/jquery_1.11.1.min.js"></script>
-    <script src="../js/external_js_libraries/bootstrap_3.3.0.min.js"></script>
 
  <!--   <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script> -->
@@ -20,6 +21,9 @@
 
 </head>
 <style>
+    .search{
+        left: 72px !important;
+    }
     * {
         outline: none !important;
     }
@@ -68,16 +72,16 @@
     </nav>
     <nav class="navbar navbar-default" role="navigation" style="background-color: #060606; border-radius: 0px; margin: 0px; border: none">
         <ul class="nav" style="color: whitesmoke; margin-left: 370px; font-size: 17px">
-            <li style="margin-right: 50px"><a href="my_books.html">мои книги</a></li>
-            <li style="margin-right: 50px"><a href="recommended_books.html">рекомендации</a></li>
-            <li><a href="new_books.html">новые книги</a></li>
+            <li style="margin-right: 50px"><a href="my_books.html">МОИ КНИГИ</a></li>
+            <li style="margin-right: 50px"><a href="recommended_books.html">РЕКОМЕНДАЦИИ</a></li>
+            <li><a href="new_books.html">НОВЫЕ КНИГИ</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-            <li>
+            <li style="float: right !important;">
                 <div class="search" style="padding: 0px">
                     <input type="text" class="form-control input-sm" maxlength="100" style="font-size: 14px" placeholder="по названию..." />
                     <button style=" height: 30px; font-size: 17px; background-color: #060606; position: absolute; right: 0; padding: 0px;
-                     border-radius:1px;" type="submit" class="btn btn-sm">поиск</button>
+                     border-radius:1px;" type="submit" class="btn btn-sm">ПОИСК</button>
                 </div>
             </li>
         </ul>
@@ -159,6 +163,8 @@
         </div>
     </div>
 </div>
+<script src="../js/external_js_libraries/jquery_1.11.1.min.js"></script>
+<script src="../js/external_js_libraries/bootstrap_3.3.0.min.js"></script>
 <script src="../js/stars.js"></script>
 </body>
 </html>
