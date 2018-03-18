@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="../css/stylesheet.css">
     <link rel="stylesheet" href="../css/external_css_libraries/w3.css">
 
+    <script src="../js/external_js_libraries/jquery_1.11.1.min.js"></script>
+    <script src="../js/external_js_libraries/bootstrap_3.3.0.min.js"></script>
+
   <!--  <link rel="stylesheet" href="../css/external_css_libraries/bootstrap3_3_0.min.css">
     <link rel="stylesheet" href="../css/external_css_libraries/bootstrap4_0_0.min.css">
 -->
@@ -21,12 +24,10 @@
 
 </head>
 <style>
-    .search{
-        left: 72px !important;
-    }
     * {
         outline: none !important;
     }
+
     body{
         background-color: whitesmoke;
     }
@@ -47,9 +48,10 @@
         background-color: #060606 !important;
     }
 
-    .navbar{
+    .navbar {
         margin-bottom: 0px !important;
     }
+
 </style>
 <body>
 <div class="w3-top">
@@ -76,13 +78,14 @@
             <li style="margin-right: 50px"><a href="recommended_books.html">РЕКОМЕНДАЦИИ</a></li>
             <li><a href="new_books.html">НОВЫЕ КНИГИ</a></li>
         </ul>
+
         <ul class="nav navbar-nav navbar-right">
-            <li style="float: right !important;">
-                <div class="search" style="padding: 0px">
-                    <input type="text" class="form-control input-sm" maxlength="100" style="font-size: 14px" placeholder="по названию..." />
-                    <button style=" height: 30px; font-size: 17px; background-color: #060606; position: absolute; right: 0; padding: 0px;
-                     border-radius:1px;" type="submit" class="btn btn-sm">ПОИСК</button>
-                </div>
+            <li>
+                <form class="searchbox">
+                    <input type="search" placeholder="Search......" name="search" class="searchbox-input" onkeyup="buttonUp();" required>
+                    <input type="submit" class="searchbox-submit" value="ПОИСК">
+                    <span class="searchbox-icon">ПОИСК</span>
+                </form>
             </li>
         </ul>
     </nav>
@@ -163,8 +166,9 @@
         </div>
     </div>
 </div>
-<script src="../js/external_js_libraries/jquery_1.11.1.min.js"></script>
-<script src="../js/external_js_libraries/bootstrap_3.3.0.min.js"></script>
+
+
 <script src="../js/stars.js"></script>
+<script src="../js/search.js"></script>
 </body>
 </html>
