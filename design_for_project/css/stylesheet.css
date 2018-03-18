@@ -220,3 +220,10 @@ span.glyphicon {
 .searchbox-open{
     width:100%;
 }
+
+@font-face {
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Glyphicons Halflings'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype');
+}
