@@ -8,10 +8,8 @@
     <link rel="stylesheet" href="../css/stylesheet.css">
     <link rel="stylesheet" href="../css/external_css_libraries/w3.css">
 
-    <script src="../js/external_js_libraries/jquery_1.11.1.min.js"></script>
-    <script src="../js/external_js_libraries/bootstrap_3.3.0.min.js"></script>
-
     <link rel="stylesheet" href="../css/external_css_libraries/bootstrap3_3_0.min.css">
+
 
  <!--<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
@@ -235,39 +233,6 @@
     <div class="row">
         <div class="col-md-13">
             <h2 style="margin-bottom: 25px">Мои книги</h2>
-            <div class="panel panel-default  panel--styled">
-                <div class="panel-body">
-                    <div class="col-md-12 panelTop" style="padding: 5px">
-                        <div class="col-md-3" style="margin-right: 0px">
-                            <img class="img-responsive" src="http://placehold.it/350x350" style="height: 230px; width: 180px"/>
-                        </div>
-
-                        <h4>Название книги</h4>
-                        <h5>Автор</h5>
-
-                        <div class="book_description" style="margin: 0px; font-size: 15px; text-align: left">
-                            История маленького сонного городка на юге Америки,
-                            поведанная маленькой девочкой. История ее брата Джима, друга Дилла и ее отца – честного,
-                            принципиального адвоката Аттикуса Финча, одного из последних и лучших представителей старой
-                            "южной аристократии". История судебного процесса по делу чернокожего парня, обвиненного в насилии
-                            над белой девушкой. Но прежде всего – история переломной эпохи, когда ксенофобия, расизм,
-                            нетерпимость и ханжество, присущие американскому югу, постепенно уходят в прошлое. "Ветер перемен"
-                            только-только повеял над Америкой. Что он принесет?..
-                        </div>
-                    </div>
-
-                    <div class="col-md-10">
-                        <div class="col-md-3 text-center">
-                            <div class="stars" style="margin-bottom: 15px">
-                                <h4>Моя оценка</h4>
-                                <div id="stars" class="starrr"></div>
-                            </div>
-                           <!--<button class="btn btn-lg btn-add-to-cart btn-green" style="margin-bottom: 5px">Интересно</button> -->
-                            <button class="btn btn-lg btn-add-to-cart btn-blue">Подробнее</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
             <div class="panel panel-default  panel--styled">
                 <div class="panel-body">
@@ -290,14 +255,24 @@
                         </div>
                     </div>
 
-                    <div class="col-md-10">
+                    <div class="col-md-10" style="margin-top: 5px">
                         <div class="col-md-3 text-center">
-                            <div class="stars" style="margin-bottom: 15px">
-                                <h4>Моя оценка</h4>
-                                <div id="stars" class="starrr"></div>
-                            </div>
+                            <form action="#">
+                                <div class="rating" id="rating">
+                                    <button class="btn btn-default like" style="background-color: #4CAF50; border-radius: 0px">
+                                        <span class="glyphicon glyphicon-thumbs-up"></span>
+                                        <input type="hidden">
+                                    </button>
+                                    <span class="likes">0</span>
+                                    <button class="btn btn-default dislike" style="background-color: #f44336;  border-radius: 0px">
+                                        <span class="glyphicon glyphicon-thumbs-down"></span>
+                                        <input type="hidden">
+                                    </button>
+                                    <span class="dislikes">0</span>
+                                </div>
+                            </form>
                             <!--<button class="btn btn-lg btn-add-to-cart btn-green" style="margin-bottom: 5px">Интересно</button> -->
-                            <button class="btn btn-lg btn-add-to-cart btn-blue">Подробнее</button>
+                            <button class="btn btn-lg btn-add-to-cart btn-blue" style="margin-top: 10px">Подробнее</button>
                         </div>
                     </div>
                 </div>
@@ -305,6 +280,10 @@
         </div>
     </div>
 </div>
+</div>
+<script src="../js/external_js_libraries/jquery_1.11.1.min.js"></script>
+<script src="../js/external_js_libraries/bootstrap_3.3.0.min.js"></script>
+<script src="../js/external_js_libraries/like-dislike.js"></script>
 <script>
     function centerModal() {
         $(this).css('display', 'block');
@@ -320,10 +299,38 @@
     });
 </script>
 
+<script>
+    $('#rating').likeDislike({
+        reverseMode: false,
+        disabledClass: 'disable',
+        click: function (value, l, d, event) {
+            var likes = $(this.element).find('.likes');
+            var dislikes =  $(this.element).find('.dislikes');
+
+            likes.text(parseInt(likes.text()) + l);
+            dislikes.text(parseInt(dislikes.text()) + d);
+        }
+    });
+    $('#rating2').likeDislike({
+        reverseMode: true,
+        disabledClass: 'disable',
+        click: function (value, l, d, event) {
+            var likes = $(this.element).find('.likes');
+            var dislikes =  $(this.element).find('.dislikes');
+
+            likes.text(parseInt(likes.text()) + l);
+            dislikes.text(parseInt(dislikes.text()) + d);
+        }
+    });
+    $('#rating3').likeDislike({
+        readOnly: true,
+        disabledClass: 'disable'
+    });
+</script>
+
 
 <script src="../js/check_genres.js"></script>
 <script src="../js/openModal.js"></script>
-<script src="../js/stars.js"></script>
 <script src="../js/search.js"></script>
 </body>
 </html>
