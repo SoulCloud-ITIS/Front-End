@@ -158,7 +158,7 @@
                                                     <div class="bizcontent">
                                                         <input type="checkbox" name="var_id[]" autocomplete="off" value="love">
                                                         <span class="glyphicon glyphicon-ok glyphicon-lg"></span>
-                                                        <h5>О ЛЮБВИ</h5>
+                                                        <h5>ЛЮБОВЬ</h5>
                                                     </div>
                                                 </label>
                                             </div>
@@ -172,7 +172,7 @@
                                                     <div class="bizcontent">
                                                         <input type="checkbox" name="var_id[]" autocomplete="off" value="war">
                                                         <span class="glyphicon glyphicon-ok glyphicon-lg"></span>
-                                                        <h5>О ВОЙНЕ</h5>
+                                                        <h5>ФЭНТЕЗИ</h5>
                                                     </div>
                                                 </label>
                                             </div>
@@ -185,7 +185,7 @@
                                                     <div class="bizcontent">
                                                         <input type="checkbox" name="var_id[]" autocomplete="off" value="friendship">
                                                         <span class="glyphicon glyphicon-ok glyphicon-lg"></span>
-                                                        <h5>О ДРУЖБЕ</h5>
+                                                        <h5>ИСКУССТВО</h5>
                                                     </div>
                                                 </label>
                                             </div>
@@ -217,11 +217,24 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="items col-xs-5 col-sm-5 col-md-3 col-lg-4">
+                                        <div class="info-block block-info clearfix">
+                                            <div data-toggle="buttons" class="btn-group bizmoduleselect">
+                                                <label class="btn btn-default">
+                                                    <div class="bizcontent">
+                                                        <input type="checkbox" name="var_id[]" autocomplete="off" value="adventure">
+                                                        <span class="glyphicon glyphicon-ok glyphicon-lg"></span>
+                                                        <h5>ДЕТЕКТИВ</h5>
+                                                    </div>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-primary">Сохранить</button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Сохранить</button>
                     </div>
                 </div>
             </div>
@@ -259,16 +272,14 @@
                         <div class="col-md-3 text-center">
                             <form action="#">
                                 <div class="rating" id="rating">
-                                    <button class="btn btn-default like" style="background-color: #4CAF50; border-radius: 0px">
-                                        <span class="glyphicon glyphicon-thumbs-up"></span>
+                                    <button class="btn btn-default like" style="border: none">
+                                        <span style="color: green; font-size: 20px" class="glyphicon glyphicon-thumbs-up"></span>
                                         <input type="hidden">
                                     </button>
-                                    <span class="likes">0</span>
-                                    <button class="btn btn-default dislike" style="background-color: #f44336;  border-radius: 0px">
-                                        <span class="glyphicon glyphicon-thumbs-down"></span>
+                                    <button class="btn btn-default dislike" style="border: none">
+                                        <span style="color: red; font-size: 20px" class="glyphicon glyphicon-thumbs-down"></span>
                                         <input type="hidden">
                                     </button>
-                                    <span class="dislikes">0</span>
                                 </div>
                             </form>
                             <!--<button class="btn btn-lg btn-add-to-cart btn-green" style="margin-bottom: 5px">Интересно</button> -->
@@ -283,7 +294,6 @@
 </div>
 <script src="../js/external_js_libraries/jquery_1.11.1.min.js"></script>
 <script src="../js/external_js_libraries/bootstrap_3.3.0.min.js"></script>
-<script src="../js/external_js_libraries/like-dislike.js"></script>
 <script>
     function centerModal() {
         $(this).css('display', 'block');
@@ -300,32 +310,7 @@
 </script>
 
 <script>
-    $('#rating').likeDislike({
-        reverseMode: false,
-        disabledClass: 'disable',
-        click: function (value, l, d, event) {
-            var likes = $(this.element).find('.likes');
-            var dislikes =  $(this.element).find('.dislikes');
-
-            likes.text(parseInt(likes.text()) + l);
-            dislikes.text(parseInt(dislikes.text()) + d);
-        }
-    });
-    $('#rating2').likeDislike({
-        reverseMode: true,
-        disabledClass: 'disable',
-        click: function (value, l, d, event) {
-            var likes = $(this.element).find('.likes');
-            var dislikes =  $(this.element).find('.dislikes');
-
-            likes.text(parseInt(likes.text()) + l);
-            dislikes.text(parseInt(dislikes.text()) + d);
-        }
-    });
-    $('#rating3').likeDislike({
-        readOnly: true,
-        disabledClass: 'disable'
-    });
+    $('#myModal').modal({backdrop: 'static', keyboard: false})
 </script>
 
 
