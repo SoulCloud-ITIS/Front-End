@@ -10,6 +10,7 @@
 
     <link rel="stylesheet" href="../css/external_css_libraries/bootstrap3_3_0.min.css">
 
+    <link rel="stylesheet" href="../fonts/font-awesome.min.css">
 
  <!--<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
@@ -87,6 +88,20 @@
     .form-group input[type="checkbox"]:checked + .btn-group > label span:last-child {
         display: none;
     }
+    .rating>.btn, .rating>.btn:active, .rating>.btn:hover, .rating>.btn:focus {
+        background-color: white !important;
+        box-shadow: none !important;
+    }
+
+    .rating>button{
+        background-color: white !important;
+    }
+     .rating>button:active, .rating>button:focus, .rating>button:hover {
+         background-color: white !important;
+         border-radius: 50% !important;
+         border-color: green !important;
+     }
+
 
 </style>
 <body>
@@ -140,7 +155,7 @@
 <div class="container">
     <div class="row">
         <!-- Modal -->
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -270,14 +285,15 @@
 
                     <div class="col-md-10" style="margin-top: 5px">
                         <div class="col-md-3 text-center">
+                            <h4 style="margin-bottom: 0px">Моя оценка</h4>
                             <form action="#">
                                 <div class="rating" id="rating">
-                                    <button class="btn btn-default like" style="border: none">
-                                        <span style="color: green; font-size: 20px" class="glyphicon glyphicon-thumbs-up"></span>
+                                    <button class="btn btn-default like" id="btn_like" style="border: none">
+                                        <span id="likes" style="color: green; font-size: 20px" class="fa fa-thumbs-o-up"></span>
                                         <input type="hidden">
                                     </button>
-                                    <button class="btn btn-default dislike" style="border: none">
-                                        <span style="color: red; font-size: 20px" class="glyphicon glyphicon-thumbs-down"></span>
+                                    <button class="btn btn-default dislike" id="btn_dislike" style="border: none;">
+                                        <span id="dislikes" style="color: red; font-size: 20px" class="fa fa-thumbs-o-down"></span>
                                         <input type="hidden">
                                     </button>
                                 </div>
@@ -294,6 +310,7 @@
 </div>
 <script src="../js/external_js_libraries/jquery_1.11.1.min.js"></script>
 <script src="../js/external_js_libraries/bootstrap_3.3.0.min.js"></script>
+<script src="../js/external_js_libraries/like-dislike.js"></script>
 <script>
     function centerModal() {
         $(this).css('display', 'block');
@@ -313,6 +330,32 @@
     $('#myModal').modal({backdrop: 'static', keyboard: false})
 </script>
 
+<script>
+    $(document).ready(function () {
+        var rating = $(this).find('#rating');
+        rating.find('#btn_like').click( function() {
+            if (rating.find('#dislikes').className = 'fa fa-thumbs-down'){
+                rating.find('#dislikes').addClass('fa-thumbs-o-down');
+                rating.find('#dislikes').removeClass('fa-thumbs-down');
+                $(this).find('#likes').toggleClass('fa-thumbs-up fa-thumbs-o-up');
+            }
+            else if ($('.rating').find('#dislikes').className= 'fa fa-thumbs-o-down') {
+                $(this).find('#likes').toggleClass('fa-thumbs-up fa-thumbs-o-up');
+            }
+        });
+
+        rating.find('#btn_dislike').click(function () {
+            if (rating.find('#likes').className = 'fa fa-thumbs-up'){
+                rating.find('#likes').addClass('fa-thumbs-o-up');
+                rating.find('#likes').removeClass('fa-thumbs-up');
+                $(this).find('#dislikes').toggleClass('fa-thumbs-down fa-thumbs-o-down');
+            }
+            else if ($('.rating').find('#likes').className= 'fa fa-thumbs-o-up') {
+                $(this).find('#dislikes').toggleClass('fa-thumbs-down fa-thumbs-o-down');
+            }
+        });
+    });
+</script>
 
 <script src="../js/check_genres.js"></script>
 <script src="../js/openModal.js"></script>
